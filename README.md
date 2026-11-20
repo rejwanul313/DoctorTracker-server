@@ -6,8 +6,8 @@ Doctor Tracker is a secure admin portal for clinics that need one reliable place
 
 | | |
 |---|---|
-| **Live app (Vercel)** | _LIVE_FRONTEND_URL_ |
-| **Live API (Render)** | _LIVE_API_URL_ (health: `/api/v1/health`) |
+| **Live app (Vercel)** | https://doctortracker-client.vercel.app |
+| **Live API (Render)** | https://doctortracker-server-3hjh.onrender.com/api/v1 ([health check](https://doctortracker-server-3hjh.onrender.com/api/v1/health)) — free tier, first request after idle can take ~1 min |
 | **Frontend repo** | https://github.com/rejwanul313/DoctorTracker-client |
 | **Backend repo** | https://github.com/rejwanul313/DoctorTracker-server |
 | **Admin (full access)** | `admin@doctortracker.app` / `Admin@12345` |

@@ -1,0 +1,31 @@
+# Render Blueprint: New → Blueprint → pick this repo. Values marked `sync: false` are asked for
+# in the dashboard on first deploy (never commit them).
+services:
+  - type: web
+    name: doctortracker-server
+    runtime: node
+    plan: free
+    region: singapore
+    branch: main
+    # NODE_ENV=production makes npm skip devDependencies, but the build needs tsup.
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: '22'
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLIENT_ORIGIN
+        sync: false
+      - key: COOKIE_NAME
+        value: dt_session
+      - key: SESSION_TTL_DAYS
+        value: '7'
+      - key: TRUST_PROXY
+        value: '1'
